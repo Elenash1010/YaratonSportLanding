@@ -1,0 +1,1804 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Физкультурно-оздоровительный центр — движение, восстановление, здоровье</title>
+  <meta name="description" content="Современный физкультурно-оздоровительный центр: водная зона, тренировки, восстановление, релакс, персональный сервис и комфортная атмосфера." />
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --surface: rgba(255, 255, 255, 0.82);
+      --surface-solid: #ffffff;
+      --surface-soft: #f2f4f7;
+      --text: #111827;
+      --muted: #5f6b7a;
+      --line: rgba(17, 24, 39, 0.08);
+      --line-strong: rgba(17, 24, 39, 0.12);
+      --accent: #1f4f7a;
+      --accent-soft: #eef4f8;
+      --accent-2: #74889b;
+      --success: #2e6a54;
+      --shadow-sm: 0 10px 30px rgba(17, 24, 39, 0.05);
+      --shadow-md: 0 20px 60px rgba(17, 24, 39, 0.08);
+      --radius-sm: 14px;
+      --radius-md: 22px;
+      --radius-lg: 32px;
+      --container: 1240px;
+      --transition: 240ms cubic-bezier(.2,.8,.2,1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(31,79,122,.08), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(116,136,155,.08), transparent 24%),
+        linear-gradient(180deg, #fbfcfd 0%, #f5f7fa 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 112px 0;
+      position: relative;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 40px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.7);
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: .02em;
+      backdrop-filter: blur(10px);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #8cb0ca);
+      box-shadow: 0 0 0 4px rgba(31,79,122,.08);
+    }
+
+    h1, h2, h3, h4, p { margin: 0; }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 76px);
+      line-height: .98;
+      letter-spacing: -0.05em;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      font-weight: 650;
+    }
+
+    h3 {
+      font-size: clamp(22px, 2.2vw, 30px);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      font-weight: 600;
+    }
+
+    p.lead {
+      font-size: clamp(17px, 1.8vw, 22px);
+      line-height: 1.55;
+      color: var(--muted);
+      max-width: 740px;
+    }
+
+    p.copy {
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    .muted { color: var(--muted); }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      backdrop-filter: saturate(180%) blur(20px);
+      background: linear-gradient(180deg, rgba(247,248,250,.88), rgba(247,248,250,.66));
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--transition), background var(--transition), padding var(--transition);
+    }
+
+    .site-header.scrolled {
+      border-color: var(--line);
+      padding: 12px 0;
+      background: linear-gradient(180deg, rgba(250,251,252,.92), rgba(250,251,252,.78));
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(145deg, #fefefe, #e9eef4);
+      border: 1px solid rgba(31,79,122,.10);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 10px 24px rgba(17,24,39,.06);
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 15px;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-text span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav a {
+      color: #334155;
+      font-size: 14px;
+      transition: color var(--transition), transform var(--transition);
+    }
+
+    .nav a:hover { color: var(--accent); }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-size: 15px;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition), color var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, #285d8c 0%, #1f4f7a 100%);
+      color: #fff;
+      box-shadow: 0 18px 40px rgba(31,79,122,.22);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 22px 44px rgba(31,79,122,.28);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.7);
+      color: var(--text);
+      border-color: var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .btn-secondary:hover {
+      background: #fff;
+      border-color: var(--line-strong);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.75);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-sm);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      content: "";
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 999px;
+      position: relative;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+
+    .menu-toggle span::before { position: absolute; top: -6px; }
+    .menu-toggle span::after { position: absolute; top: 6px; }
+
+    .menu-open .menu-toggle span { background: transparent; }
+    .menu-open .menu-toggle span::before { top: 0; transform: rotate(45deg); }
+    .menu-open .menu-toggle span::after { top: 0; transform: rotate(-45deg); }
+
+    .hero {
+      padding: 44px 0 84px;
+    }
+
+    .hero-shell {
+      position: relative;
+      overflow: hidden;
+      border-radius: 40px;
+      border: 1px solid rgba(255,255,255,.8);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.82), rgba(255,255,255,.58)),
+        radial-gradient(circle at 20% 20%, rgba(31,79,122,.12), transparent 30%),
+        radial-gradient(circle at 85% 20%, rgba(116,136,155,.14), transparent 22%),
+        linear-gradient(135deg, #edf2f7 0%, #f8fafc 38%, #eef3f8 100%);
+      box-shadow: 0 30px 80px rgba(17,24,39,.08), inset 0 1px 0 rgba(255,255,255,.8);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 34px;
+      align-items: stretch;
+      min-height: 720px;
+      padding: 68px;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-copy .eyebrow { margin-bottom: 18px; }
+
+    .hero-copy p.lead {
+      margin-top: 22px;
+      max-width: 660px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 34px;
+      max-width: 720px;
+    }
+
+    .metric {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.6);
+      border: 1px solid rgba(17,24,39,.06);
+      backdrop-filter: blur(10px);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 24px;
+      letter-spacing: -0.04em;
+      margin-bottom: 6px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+      display: block;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 580px;
+      display: grid;
+      align-items: end;
+    }
+
+    .visual-main {
+      position: absolute;
+      inset: 0;
+      border-radius: 32px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(17,24,39,.04), rgba(17,24,39,.18)),
+        url('https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      box-shadow: inset 0 -100px 120px rgba(17,24,39,.22);
+    }
+
+    .floating-card,
+    .floating-panel {
+      position: relative;
+      z-index: 2;
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(255,255,255,.68);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 24px 60px rgba(17,24,39,.12);
+    }
+
+    .floating-card {
+      width: min(420px, calc(100% - 24px));
+      margin: 0 0 24px 24px;
+      border-radius: 26px;
+      padding: 22px;
+    }
+
+    .floating-card h3 { margin-bottom: 8px; }
+
+    .floating-panel {
+      position: absolute;
+      top: 26px;
+      right: 26px;
+      width: 210px;
+      border-radius: 24px;
+      padding: 18px;
+    }
+
+    .floating-panel small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+
+    .floating-panel strong {
+      display: block;
+      font-size: 28px;
+      letter-spacing: -0.04em;
+      margin-bottom: 4px;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,.7) 0%, rgba(255,255,255,0) 70%);
+      filter: blur(10px);
+      left: -100px;
+      top: -120px;
+      pointer-events: none;
+    }
+
+    .glass-card,
+    .soft-card,
+    .price-card,
+    .expert-card,
+    .schedule-card,
+    .contact-card,
+    .form-card,
+    .scenario-card,
+    .feature-card,
+    .zone-card,
+    .direction-card,
+    .relax-card {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .glass-card {
+      padding: 30px;
+    }
+
+    .soft-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(247,249,251,.95));
+      padding: 28px;
+    }
+
+    .intro-grid,
+    .directions-grid,
+    .scenarios-grid,
+    .training-grid,
+    .experts-grid,
+    .pricing-grid,
+    .relax-grid,
+    .contact-grid,
+    .water-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .intro-grid {
+      grid-template-columns: 1.05fr .95fr;
+      align-items: stretch;
+    }
+
+    .intro-visual {
+      min-height: 420px;
+      border-radius: 28px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(17,24,39,.08), rgba(17,24,39,.22)),
+        url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      box-shadow: var(--shadow-md);
+    }
+
+    .intro-copy {
+      display: grid;
+      gap: 18px;
+      align-content: center;
+      padding: 38px;
+    }
+
+    .bullets {
+      display: grid;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .bullet {
+      display: grid;
+      grid-template-columns: 16px 1fr;
+      gap: 12px;
+      align-items: start;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .bullet::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #9ab6cb);
+      margin-top: 7px;
+      box-shadow: 0 0 0 5px rgba(31,79,122,.08);
+    }
+
+    .directions-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .direction-card {
+      padding: 26px;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .direction-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -20% -45% auto;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(31,79,122,.10), rgba(31,79,122,0));
+      pointer-events: none;
+    }
+
+    .direction-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 54px rgba(17,24,39,.09);
+      border-color: rgba(31,79,122,.14);
+    }
+
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #ffffff, #edf3f8);
+      border: 1px solid rgba(31,79,122,.10);
+      box-shadow: 0 8px 18px rgba(17,24,39,.05);
+      margin-bottom: 18px;
+      font-size: 20px;
+    }
+
+    .direction-card h3,
+    .scenario-card h3,
+    .zone-card h3,
+    .feature-card h3,
+    .expert-card h3,
+    .price-card h3,
+    .relax-card h3,
+    .schedule-card h3,
+    .contact-card h3,
+    .form-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .direction-meta {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-size: 14px;
+    }
+
+    .scenarios-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .scenario-card {
+      padding: 26px;
+      display: grid;
+      gap: 16px;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .scenario-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 50px rgba(17,24,39,.09);
+    }
+
+    .scenario-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: #425466;
+      font-size: 13px;
+    }
+
+    .water-grid {
+      grid-template-columns: 1.05fr .95fr;
+      align-items: stretch;
+    }
+
+    .zone-card {
+      padding: 34px;
+      display: grid;
+      gap: 24px;
+      min-height: 100%;
+    }
+
+    .zone-visual {
+      min-height: 460px;
+      border-radius: 30px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(17,24,39,.08), rgba(17,24,39,.18)),
+        url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+
+    .zone-badge {
+      position: absolute;
+      right: 24px;
+      bottom: 24px;
+      background: rgba(255,255,255,.8);
+      border: 1px solid rgba(255,255,255,.7);
+      backdrop-filter: blur(14px);
+      border-radius: 24px;
+      padding: 16px 18px;
+      min-width: 220px;
+      box-shadow: 0 22px 48px rgba(17,24,39,.15);
+    }
+
+    .zone-badge strong {
+      display: block;
+      font-size: 26px;
+      letter-spacing: -0.04em;
+      margin-bottom: 4px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .feature-card {
+      padding: 22px;
+      background: rgba(245,248,251,.84);
+    }
+
+    .feature-card p { color: var(--muted); line-height: 1.55; font-size: 15px; }
+
+    .training-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .experts-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .expert-card {
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .expert-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 26px 54px rgba(17,24,39,.09);
+    }
+
+    .expert-photo {
+      aspect-ratio: 4 / 4.2;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .expert-body {
+      padding: 24px;
+    }
+
+    .expert-role {
+      color: var(--accent);
+      font-size: 14px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .expert-meta {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .price-card {
+      padding: 30px;
+      display: grid;
+      gap: 18px;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .price-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 28px 60px rgba(17,24,39,.09);
+      border-color: rgba(31,79,122,.14);
+    }
+
+    .pricing-grid {
+      grid-template-columns: repeat(3, 1fr);
+      align-items: stretch;
+    }
+
+    .price-card.featured {
+      background: linear-gradient(180deg, #fdfefe 0%, #eef4f8 100%);
+      border-color: rgba(31,79,122,.14);
+    }
+
+    .price-top {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .price {
+      font-size: clamp(34px, 4vw, 46px);
+      letter-spacing: -0.06em;
+      line-height: 1;
+      font-weight: 650;
+    }
+
+    .price small {
+      font-size: 16px;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .price-list {
+      display: grid;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .price-list div {
+      display: grid;
+      grid-template-columns: 16px 1fr;
+      gap: 12px;
+    }
+
+    .price-list div::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 7px;
+      box-shadow: 0 0 0 4px rgba(31,79,122,.08);
+    }
+
+    .relax-grid {
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+    }
+
+    .relax-card {
+      padding: 34px;
+      display: grid;
+      gap: 22px;
+    }
+
+    .relax-visual {
+      min-height: 460px;
+      border-radius: 30px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(17,24,39,.06), rgba(17,24,39,.20)),
+        url('https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      box-shadow: var(--shadow-md);
+    }
+
+    .schedule-shell {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .schedule-card {
+      padding: 24px;
+    }
+
+    .schedule-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .schedule-item {
+      display: grid;
+      grid-template-columns: 110px 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .schedule-item:last-child { border-bottom: 0; }
+
+    .schedule-time {
+      font-size: 14px;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: .01em;
+    }
+
+    .schedule-title {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .schedule-format {
+      font-size: 13px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      white-space: nowrap;
+    }
+
+    .contact-grid {
+      grid-template-columns: .85fr .75fr 1.1fr;
+      align-items: stretch;
+    }
+
+    .contact-card,
+    .form-card {
+      padding: 28px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .contact-item {
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-item:first-child { border-top: 0; padding-top: 0; }
+
+    .contact-label {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .contact-value {
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .map-frame {
+      min-height: 100%;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.55)),
+        url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      position: relative;
+      min-height: 420px;
+    }
+
+    .map-overlay {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(255,255,255,.72);
+      backdrop-filter: blur(16px);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 20px 48px rgba(17,24,39,.12);
+    }
+
+    .form {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field label {
+      font-size: 14px;
+      color: #425466;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      padding: 14px 16px;
+      background: rgba(255,255,255,.86);
+      color: var(--text);
+      outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+      resize: vertical;
+      min-height: 54px;
+    }
+
+    .field textarea { min-height: 110px; }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: rgba(31,79,122,.28);
+      box-shadow: 0 0 0 4px rgba(31,79,122,.08);
+      background: #fff;
+    }
+
+    .form-note {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    footer {
+      padding: 26px 0 46px;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      flex-wrap: wrap;
+    }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 700ms cubic-bezier(.2,.8,.2,1), transform 700ms cubic-bezier(.2,.8,.2,1);
+    }
+
+    [data-reveal].revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1180px) {
+      .hero-grid,
+      .intro-grid,
+      .water-grid,
+      .relax-grid,
+      .schedule-shell,
+      .contact-grid,
+      .section-head {
+        grid-template-columns: 1fr;
+      }
+
+      .directions-grid,
+      .scenarios-grid,
+      .training-grid,
+      .experts-grid,
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-grid {
+        min-height: auto;
+        padding: 42px;
+      }
+
+      .hero-visual { min-height: 520px; }
+    }
+
+    @media (max-width: 900px) {
+      .nav,
+      .header-actions .btn-secondary {
+        display: none;
+      }
+
+      .menu-toggle { display: inline-flex; }
+
+      .site-header.menu-open .nav {
+        display: grid;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 20px;
+        right: 20px;
+        padding: 18px;
+        gap: 14px;
+        border-radius: 24px;
+        background: rgba(255,255,255,.92);
+        border: 1px solid var(--line);
+        box-shadow: 0 30px 80px rgba(17,24,39,.12);
+        backdrop-filter: blur(20px);
+      }
+
+      .site-header.menu-open .nav a {
+        padding: 6px 2px;
+        font-size: 15px;
+      }
+
+      .hero {
+        padding-top: 20px;
+      }
+
+      .hero-shell {
+        border-radius: 30px;
+      }
+
+      .hero-grid {
+        padding: 28px;
+      }
+
+      .hero-metrics,
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .directions-grid,
+      .scenarios-grid,
+      .training-grid,
+      .experts-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .schedule-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(calc(100% - 24px), var(--container));
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+
+      .site-header {
+        padding: 12px 0;
+      }
+
+      .brand-text span { display: none; }
+
+      .header-actions .btn-primary {
+        display: none;
+      }
+
+      .hero-grid {
+        padding: 20px;
+        gap: 22px;
+      }
+
+      .hero-metrics {
+        margin-top: 24px;
+      }
+
+      .floating-card {
+        width: calc(100% - 20px);
+        margin: 0 10px 10px;
+        padding: 18px;
+        border-radius: 22px;
+      }
+
+      .floating-panel {
+        top: 12px;
+        right: 12px;
+        width: 170px;
+        padding: 14px;
+        border-radius: 18px;
+      }
+
+      .floating-panel strong { font-size: 22px; }
+
+      .intro-copy,
+      .zone-card,
+      .relax-card,
+      .price-card,
+      .soft-card,
+      .glass-card,
+      .contact-card,
+      .form-card,
+      .schedule-card {
+        padding: 22px;
+      }
+
+      .intro-visual,
+      .zone-visual,
+      .relax-visual,
+      .map-frame {
+        min-height: 320px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a href="#top" class="brand" aria-label="На главный экран">
+        <div class="brand-mark">ФО</div>
+        <div class="brand-text">
+          <strong>Физкультурно-оздоровительный центр</strong>
+          <span>Движение, восстановление, здоровье</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#about">О центре</a>
+        <a href="#directions">Направления</a>
+        <a href="#water">Водная зона</a>
+        <a href="#training">Занятия</a>
+        <a href="#experts">Экспертиза</a>
+        <a href="#pricing">Цены</a>
+        <a href="#schedule">Расписание</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-secondary" href="#schedule">Смотреть расписание</a>
+        <a class="btn btn-primary" href="#contacts">Записаться</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-shell" data-reveal>
+          <div class="hero-glow"></div>
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <span class="eyebrow">Современный формат оздоровительного центра</span>
+              <h1>Пространство движения, восстановления и спокойной силы.</h1>
+              <p class="lead">
+                Не просто тренировки и не просто бассейн. Здесь водная зона, занятия, мягкие оздоровительные практики и релакс объединены в цельный сценарий заботы о теле, ритме жизни и внутреннем ресурсе.
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#contacts">Записаться на посещение</a>
+                <a class="btn btn-secondary" href="#directions">Изучить направления</a>
+              </div>
+
+              <div class="hero-metrics">
+                <div class="metric">
+                  <strong>4</strong>
+                  <span>ключевых направления: вода, тренировки, восстановление и релакс</span>
+                </div>
+                <div class="metric">
+                  <strong>Комфорт</strong>
+                  <span>светлая среда, понятная логика сервисов и спокойная атмосфера</span>
+                </div>
+                <div class="metric">
+                  <strong>Сервис</strong>
+                  <span>разовые визиты, абонементы, персональный формат и сопровождение</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-visual" aria-hidden="true">
+              <div class="visual-main"></div>
+              <div class="floating-panel">
+                <small>Формат центра</small>
+                <strong>Wellness + Activity</strong>
+                <span class="muted">здоровье, движение и восстановление в одной системе</span>
+              </div>
+              <div class="floating-card">
+                <h3>Центр, в который хочется возвращаться</h3>
+                <p class="copy">
+                  Продуманная среда для тех, кто хочет поплавать, снять напряжение, поддержать форму, мягко восстановиться или просто провести время с пользой для тела и самочувствия.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="intro-grid">
+          <div class="soft-card intro-copy" data-reveal>
+            <span class="eyebrow">Что это за место</span>
+            <h2>Не спортзал. Не просто бассейн. А современный центр оздоровительного ритма.</h2>
+            <p class="copy">
+              Пространство создано для повседневной заботы о теле: когда нужна активность без перегруза, восстановление без медицинской сухости и отдых без суеты. Здесь всё работает как единая экосистема направлений, а не набор отдельных услуг.
+            </p>
+            <div class="bullets">
+              <div class="bullet">Водная зона встроена в общую логику сервиса и усиливает ощущение комфорта, а не перетягивает на себя весь фокус.</div>
+              <div class="bullet">Занятия подаются через реальные пользовательские сценарии: поддержать форму, снять напряжение, вернуть телу ресурс, провести время качественно.</div>
+              <div class="bullet">Сервис, визуальная среда и структура сайта выстроены так, чтобы центр воспринимался как современное место здоровья и восстановления высокого уровня.</div>
+            </div>
+          </div>
+          <div class="intro-visual" data-reveal></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="directions">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <span class="eyebrow">Основные направления</span>
+            <h2>Четыре направления, которые работают вместе.</h2>
+          </div>
+          <p class="copy">
+            Вместо хаотичного перечня услуг — логичная система: вода, тренировки, восстановление и релакс. Каждое направление дополняет другое и помогает собрать собственный маршрут посещения.
+          </p>
+        </div>
+
+        <div class="directions-grid">
+          <article class="direction-card" data-reveal>
+            <div class="card-icon">◌</div>
+            <h3>Водная зона</h3>
+            <p class="copy">Комфортное пространство для плавания, мягкой активности, снятия напряжения и поддержания общего тонуса.</p>
+            <div class="direction-meta">Температура, чистота, безопасность, спокойный ритм</div>
+          </article>
+          <article class="direction-card" data-reveal>
+            <div class="card-icon">△</div>
+            <h3>Тренировки</h3>
+            <p class="copy">Индивидуальные и групповые форматы: от функциональных и силовых практик до мягких направлений для баланса и мобильности.</p>
+            <div class="direction-meta">Понятная подача, разный уровень подготовки</div>
+          </article>
+          <article class="direction-card" data-reveal>
+            <div class="card-icon">✦</div>
+            <h3>Восстановление</h3>
+            <p class="copy">ЛФК, бережные оздоровительные практики и занятия, которые помогают телу вернуть устойчивость, ресурс и свободу движения.</p>
+            <div class="direction-meta">Не только активность, но и здоровье</div>
+          </article>
+          <article class="direction-card" data-reveal>
+            <div class="card-icon">☼</div>
+            <h3>Релакс</h3>
+            <p class="copy">Сауна и спокойные сценарии отдыха как естественное завершение визита и важная часть общего wellness-опыта.</p>
+            <div class="direction-meta">Уют, восстановление, внутренний выдох</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="scenarios">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <span class="eyebrow">Сценарии посещения</span>
+            <h2>Быстро понять, зачем вы здесь сегодня.</h2>
+          </div>
+          <p class="copy">
+            Этот блок помогает посетителю увидеть себя в сервисе центра: прийти поплавать, позаниматься, восстановиться или просто выдохнуть. Подача строится через намерение, а не через прайс-лист.
+          </p>
+        </div>
+
+        <div class="scenarios-grid">
+          <article class="scenario-card" data-reveal>
+            <div class="card-icon">≈</div>
+            <h3>Поплавать</h3>
+            <p class="copy">Для тех, кому нужен комфортный бассейн, спокойный темп, чистая вода и ощущение лёгкости после визита.</p>
+            <div class="scenario-tags">
+              <span class="tag">водная активность</span>
+              <span class="tag">снятие напряжения</span>
+              <span class="tag">комфорт</span>
+            </div>
+          </article>
+          <article class="scenario-card" data-reveal>
+            <div class="card-icon">↗</div>
+            <h3>Позаниматься</h3>
+            <p class="copy">Когда хочется поддерживать форму, укреплять тело, тренироваться в понятном формате и в эстетичной среде.</p>
+            <div class="scenario-tags">
+              <span class="tag">группы</span>
+              <span class="tag">персональный формат</span>
+              <span class="tag">разный уровень</span>
+            </div>
+          </article>
+          <article class="scenario-card" data-reveal>
+            <div class="card-icon">◐</div>
+            <h3>Восстановиться</h3>
+            <p class="copy">Подход для тех, кому важны мягкие практики, ЛФК, бережное движение и возвращение ощущения опоры в теле.</p>
+            <div class="scenario-tags">
+              <span class="tag">мягкие практики</span>
+              <span class="tag">оздоровление</span>
+              <span class="tag">бережный ритм</span>
+            </div>
+          </article>
+          <article class="scenario-card" data-reveal>
+            <div class="card-icon">⊙</div>
+            <h3>Отдохнуть</h3>
+            <p class="copy">Если нужен восстановительный сценарий без перегруза: вода, тёплая атмосфера, сауна, пауза и ощущение заботы.</p>
+            <div class="scenario-tags">
+              <span class="tag">релакс</span>
+              <span class="tag">сауна</span>
+              <span class="tag">wellness</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="water">
+      <div class="container">
+        <div class="water-grid">
+          <div class="zone-card" data-reveal>
+            <span class="eyebrow">Водная зона</span>
+            <h2>Бассейн — важное направление, но не единственный смысл центра.</h2>
+            <p class="copy">
+              Водная зона работает как часть более широкой системы заботы о теле. Здесь важны не только технические параметры, но и ощущение комфорта, чистоты, спокойствия и уверенности на каждом этапе посещения.
+            </p>
+            <div class="feature-grid">
+              <div class="feature-card">
+                <h3>Температура воды</h3>
+                <p>Комфортный режим для плавания, мягкой активности и расслабления без ощущения перегрева или холода.</p>
+              </div>
+              <div class="feature-card">
+                <h3>Очистка</h3>
+                <p>Современные решения по фильтрации и контролю качества воды для ощущения свежести и уверенности.</p>
+              </div>
+              <div class="feature-card">
+                <h3>Комфорт</h3>
+                <p>Продуманная среда, удобные маршруты, визуальная чистота пространства и спокойная атмосфера без суеты.</p>
+              </div>
+              <div class="feature-card">
+                <h3>Безопасность</h3>
+                <p>Контроль, понятные правила пребывания и сервис, который создаёт ощущение высокого уровня и доверия.</p>
+              </div>
+            </div>
+            <a class="btn btn-secondary" href="#contacts">Уточнить формат посещения</a>
+          </div>
+
+          <div class="zone-visual" data-reveal>
+            <div class="zone-badge">
+              <strong>Водная зона</strong>
+              <span class="muted">не как главный продукт, а как часть целостного wellness-сценария</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="training">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <span class="eyebrow">Тренировки и занятия</span>
+            <h2>Форматы, которые подстраиваются под ритм и цель.</h2>
+          </div>
+          <p class="copy">
+            Занятия подаются чисто и понятно: без перегруза терминологией, без ощущения старого прайса. Пользователь быстро видит, что здесь есть интенсивные, функциональные и мягкие направления, а также персональная работа.
+          </p>
+        </div>
+
+        <div class="training-grid">
+          <article class="soft-card" data-reveal>
+            <div class="card-icon">▣</div>
+            <h3>Групповые форматы</h3>
+            <p class="copy">Регулярные занятия в небольших группах: функциональные тренировки, силовые форматы, мягкие практики, растяжка и баланс.</p>
+          </article>
+          <article class="soft-card" data-reveal>
+            <div class="card-icon">◎</div>
+            <h3>Персональные занятия</h3>
+            <p class="copy">Индивидуальная работа с акцентом на технику, физическую форму, бережную нагрузку и персональный маршрут развития.</p>
+          </article>
+          <article class="soft-card" data-reveal>
+            <div class="card-icon">◠</div>
+            <h3>Мягкие практики</h3>
+            <p class="copy">Подход для тех, кому важно сочетать активность с восстановлением: мобильность, дыхание, осанка, деликатное движение.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="recovery">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <span class="eyebrow">Восстановление и здоровье</span>
+            <h2>Центр, который говорит о здоровье спокойно и современно.</h2>
+          </div>
+          <p class="copy">
+            Этот блок усиливает образ пространства здоровья, а не просто физической активности. ЛФК, мягкие оздоровительные практики и занятия для разных потребностей создают ощущение профессионального, но человеческого подхода.
+          </p>
+        </div>
+
+        <div class="directions-grid">
+          <article class="direction-card" data-reveal>
+            <div class="card-icon">◔</div>
+            <h3>ЛФК</h3>
+            <p class="copy">Бережная работа с подвижностью, стабилизацией и возвращением уверенного ощущения опоры в теле.</p>
+          </article>
+          <article class="direction-card" data-reveal>
+            <div class="card-icon">⌒</div>
+            <h3>Оздоровительные практики</h3>
+            <p class="copy">Мягкие форматы для тех, кто хочет поддерживать себя без перегруза и в устойчивом темпе.</p>
+          </article>
+          <article class="direction-card" data-reveal>
+            <div class="card-icon">↺</div>
+            <h3>Восстановительные сценарии</h3>
+            <p class="copy">Занятия, которые помогают снять накопленное напряжение, вернуть ресурс и улучшить самочувствие.</p>
+          </article>
+          <article class="direction-card" data-reveal>
+            <div class="card-icon">◍</div>
+            <h3>Разные потребности</h3>
+            <p class="copy">Понятные форматы для разного возраста, задач и привычного уровня физической активности.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experts">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <span class="eyebrow">Экспертиза</span>
+            <h2>Специалисты, которым доверяют своё тело и ритм восстановления.</h2>
+          </div>
+          <p class="copy">
+            Карточки команды должны передавать ощущение сервиса высокого уровня: спокойная уверенность, ясная специализация, внимание к посетителю и современный подход к движению и оздоровлению.
+          </p>
+        </div>
+
+        <div class="experts-grid">
+          <article class="expert-card" data-reveal>
+            <div class="expert-photo" style="background-image:url('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=900&q=80');"></div>
+            <div class="expert-body">
+              <span class="expert-role">Инструктор водных программ</span>
+              <h3>Анна Миронова</h3>
+              <p class="copy">Работает с водной активностью, техникой плавания и комфортной адаптацией к нагрузке в бережном режиме.</p>
+              <div class="expert-meta">
+                <span class="tag">плавание</span>
+                <span class="tag">мягкая нагрузка</span>
+                <span class="tag">персональный подход</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="expert-card" data-reveal>
+            <div class="expert-photo" style="background-image:url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=900&q=80');"></div>
+            <div class="expert-body">
+              <span class="expert-role">Тренер-методист</span>
+              <h3>Максим Орлов</h3>
+              <p class="copy">Сопровождает групповые и персональные занятия, помогает подобрать формат под цель, уровень и самочувствие.</p>
+              <div class="expert-meta">
+                <span class="tag">функциональные тренировки</span>
+                <span class="tag">сила</span>
+                <span class="tag">мобильность</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="expert-card" data-reveal>
+            <div class="expert-photo" style="background-image:url('https://images.unsplash.com/photo-1594824804732-ca8db5c4cb80?auto=format&fit=crop&w=900&q=80');"></div>
+            <div class="expert-body">
+              <span class="expert-role">Специалист по восстановлению</span>
+              <h3>Екатерина Левина</h3>
+              <p class="copy">Работает с мягкими оздоровительными практиками, ЛФК и восстановительными сценариями движения.</p>
+              <div class="expert-meta">
+                <span class="tag">ЛФК</span>
+                <span class="tag">реабилитационный подход</span>
+                <span class="tag">здоровье</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <span class="eyebrow">Цены</span>
+            <h2>Чистая подача стоимости без визуального шума.</h2>
+          </div>
+          <p class="copy">
+            Блок оформлен современно и ясно: разовые посещения, абонементы и персональные форматы разделены по логике использования, чтобы посетитель быстро выбрал свой вариант.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card" data-reveal>
+            <div class="price-top">
+              <div>
+                <h3>Разовое посещение</h3>
+                <p class="copy">Для знакомства с центром или гибкого графика посещений.</p>
+              </div>
+            </div>
+            <div class="price">1 200 <small>₽ / визит</small></div>
+            <div class="price-list">
+              <div>Доступ к выбранному направлению</div>
+              <div>Комфортный формат без долгих обязательств</div>
+              <div>Подходит для первого визита и теста сервиса</div>
+            </div>
+            <a class="btn btn-secondary" href="#contacts">Оставить заявку</a>
+          </article>
+
+          <article class="price-card featured" data-reveal>
+            <div class="price-top">
+              <div>
+                <h3>Абонемент</h3>
+                <p class="copy">Оптимальный вариант для регулярного посещения и устойчивого ритма.</p>
+              </div>
+              <span class="tag">популярный формат</span>
+            </div>
+            <div class="price">6 900 <small>₽ / месяц</small></div>
+            <div class="price-list">
+              <div>Удобный регулярный сценарий посещения</div>
+              <div>Подходит для воды, тренировок и мягких практик</div>
+              <div>Лучшее решение для привычки заботиться о теле</div>
+            </div>
+            <a class="btn btn-primary" href="#contacts">Выбрать абонемент</a>
+          </article>
+
+          <article class="price-card" data-reveal>
+            <div class="price-top">
+              <div>
+                <h3>Персональное занятие</h3>
+                <p class="copy">Индивидуальный маршрут с акцентом на задачу, здоровье и комфортный темп.</p>
+              </div>
+            </div>
+            <div class="price">2 500 <small>₽ / занятие</small></div>
+            <div class="price-list">
+              <div>Персональный подход и подбор нагрузки</div>
+              <div>Работа с техникой, восстановлением или целью</div>
+              <div>Подходит для бережного старта и точечной работы</div>
+            </div>
+            <a class="btn btn-secondary" href="#contacts">Уточнить детали</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="relax">
+      <div class="container">
+        <div class="relax-grid">
+          <div class="relax-visual" data-reveal></div>
+          <div class="relax-card" data-reveal>
+            <span class="eyebrow">Сауна / релакс-зона</span>
+            <h2>Тихий сценарий отдыха как часть заботы о себе.</h2>
+            <p class="copy">
+              Сауна и релакс-зона подаются как самостоятельный продукт и одновременно как естественное продолжение оздоровительного маршрута. Это место, где визит в центр завершается внутренним выдохом и ощущением восстановления.
+            </p>
+            <div class="bullets">
+              <div class="bullet">Уютная атмосфера без визуального шума и спортивной агрессии.</div>
+              <div class="bullet">Подходит как отдельный формат посещения и как часть общего wellness-сценария.</div>
+              <div class="bullet">Усиливает образ центра как пространства комфорта, а не только активности.</div>
+            </div>
+            <div>
+              <a class="btn btn-primary" href="#contacts">Забронировать посещение</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="schedule">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <span class="eyebrow">Расписание</span>
+            <h2>Читабельно, современно, без ощущения устаревшей таблицы.</h2>
+          </div>
+          <p class="copy">
+            Блок расписания оформлен как удобный интерфейс: понятно, когда проходят форматы, как они различаются и какой сценарий может подойти посетителю сегодня.
+          </p>
+        </div>
+
+        <div class="schedule-shell">
+          <div class="schedule-card" data-reveal>
+            <h3>Сегодня в центре</h3>
+            <div class="schedule-list">
+              <div class="schedule-item">
+                <div class="schedule-time">08:00 — 10:00</div>
+                <div>
+                  <div class="schedule-title">Свободное плавание</div>
+                  <p class="copy">Комфортный утренний формат для спокойного начала дня.</p>
+                </div>
+                <span class="schedule-format">водная зона</span>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">10:30 — 11:30</div>
+                <div>
+                  <div class="schedule-title">Мягкая мобильность</div>
+                  <p class="copy">Бережное занятие для подвижности, дыхания и общего тонуса.</p>
+                </div>
+                <span class="schedule-format">мягкая практика</span>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">13:00 — 14:00</div>
+                <div>
+                  <div class="schedule-title">Функциональная тренировка</div>
+                  <p class="copy">Динамичный формат для тех, кто любит собранную, понятную нагрузку.</p>
+                </div>
+                <span class="schedule-format">группа</span>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">17:30 — 18:30</div>
+                <div>
+                  <div class="schedule-title">ЛФК / восстановительное занятие</div>
+                  <p class="copy">Спокойная и профессиональная работа с движением и самочувствием.</p>
+                </div>
+                <span class="schedule-format">здоровье</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="schedule-card" data-reveal>
+            <h3>Как пользоваться расписанием</h3>
+            <div class="bullets">
+              <div class="bullet">Смотрите формат занятия и выбирайте сценарий под своё состояние: активность, вода, мягкая практика или восстановление.</div>
+              <div class="bullet">Разовые визиты подойдут для гибкого графика, абонемент — для регулярного ритма и устойчивого результата.</div>
+              <div class="bullet">Если нужен персональный маршрут, запись через администратора или форму заявки ниже.</div>
+            </div>
+            <div style="margin-top: 18px;">
+              <a class="btn btn-secondary" href="#contacts">Получить консультацию</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacts">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <span class="eyebrow">Контакты и запись</span>
+            <h2>Всё, что нужно для быстрого решения — в одном месте.</h2>
+          </div>
+          <p class="copy">
+            Адрес, часы работы, телефон, карта и форма заявки собраны в чистый и спокойный финальный блок. Без перегруза, без лишних переходов, с ясным призывом к действию.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card" data-reveal>
+            <h3>Контакты</h3>
+            <div class="contact-list">
+              <div class="contact-item">
+                <span class="contact-label">Адрес</span>
+                <div class="contact-value">г. Ижевск, ул. Примерная, 25</div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-label">Часы работы</span>
+                <div class="contact-value">Ежедневно, 07:00 — 22:00</div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-label">Телефон</span>
+                <div class="contact-value">+7 (900) 000-00-00</div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-label">Электронная почта</span>
+                <div class="contact-value">info@wellness-center.ru</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card" data-reveal>
+            <h3>Почему удобно записаться сейчас</h3>
+            <div class="bullets">
+              <div class="bullet">Можно быстро подобрать формат: вода, тренировка, восстановление или релакс.</div>
+              <div class="bullet">Администратор поможет выбрать разовый визит, абонемент или персональное сопровождение.</div>
+              <div class="bullet">Все ключевые вопросы можно закрыть одной заявкой без лишних шагов.</div>
+            </div>
+          </div>
+
+          <div class="form-card" data-reveal>
+            <h3>Оставить заявку</h3>
+            <form class="form">
+              <div class="field">
+                <label for="name">Имя</label>
+                <input id="name" type="text" placeholder="Ваше имя" />
+              </div>
+              <div class="field">
+                <label for="phone">Телефон</label>
+                <input id="phone" type="tel" placeholder="+7 (___) ___-__-__" />
+              </div>
+              <div class="field">
+                <label for="format">Интересующий формат</label>
+                <select id="format">
+                  <option>Выберите направление</option>
+                  <option>Водная зона</option>
+                  <option>Тренировки</option>
+                  <option>Восстановление</option>
+                  <option>Сауна / релакс</option>
+                  <option>Нужна консультация</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="message">Комментарий</label>
+                <textarea id="message" placeholder="Коротко опишите запрос"></textarea>
+              </div>
+              <button class="btn btn-primary" type="button">Отправить заявку</button>
+              <div class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных и принимаете политику конфиденциальности.</div>
+            </form>
+          </div>
+        </div>
+
+        <div class="map-frame" data-reveal style="margin-top:20px;">
+          <div class="map-overlay">
+            <h3>Как добраться</h3>
+            <p class="copy">Центр расположен в удобной городской локации с понятным маршрутом и комфортным подъездом. Здесь может быть встроена реальная карта или iframe-карта сервиса.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Физкультурно-оздоровительный центр</div>
+      <div>Современное пространство движения, восстановления и комфортного активного отдыха</div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('siteHeader');
+    const menuToggle = document.getElementById('menuToggle');
+
+    const onScroll = () => {
+      if (window.scrollY > 8) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = header.classList.toggle('menu-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.querySelectorAll('.nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        header.classList.remove('menu-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

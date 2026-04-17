@@ -35,14 +35,24 @@
         <div class="hero-shell" data-reveal>
           <div class="hero-grid">
             <div class="hero-copy">
-              <span class="eyebrow">Физкультурно-оздоровительный центр</span>
-              <h1>Современное пространство здоровья без визуального шума.</h1>
-              <p class="lead">ФОК «Сосновый» собирает всё в понятную систему: направления, инфраструктуру, врачебную консультацию, расписание, цены и финальную запись в одном логичном маршруте.</p>
+              <span class="eyebrow">Физкультурно-оздоровительный комплекс</span>
+              <h1 class="hero-title">
+                <span class="hero-title-main">
+                  <span>ЧЕБЕР</span>
+                  <span>спорт</span>
+                </span>
+                <span class="hero-title-sub">движение, здоровье,<br>эмоциональный баланс</span>
+              </h1>
+              <p class="lead">Направления, локации и форматы занятий — здесь все продумано и устроено так, чтобы вам было комфортно.</p>
               <div class="hero-actions">
                 <a class="btn btn-primary" href="#directions">Выбрать направление</a>
                 <a class="btn btn-secondary" href="#schedule">Посмотреть расписание</a>
               </div>
               <div class="hero-list">
+                <div class="hero-point">
+                  <strong>3 формата занятий</strong>
+                  <span>Подберите формат под цель, уровень подготовки и удобный ритм занятий</span>
+                </div>
                 <div class="hero-point">
                   <strong>4 направления</strong>
                   <span>водная зона, тренировки, восстановление и релакс без повторяющихся описаний</span>
@@ -51,22 +61,15 @@
                   <strong>5 локаций</strong>
                   <span>спортзал, стэп-зал, йога-зал, шэйп-зал и тренажёрный зал внутри действующего центра</span>
                 </div>
-                <div class="hero-point">
-                  <strong>3 удобных формата</strong>
-                  <span>Подберите формат под цель, уровень подготовки и удобный ритм занятий</span>
-                </div>
               </div>
             </div>
             <div class="hero-visual" aria-hidden="true">
               <div class="hero-image"></div>
               <div class="hero-stat">
-                <small>Новая структура</small>
-                <strong>Главная + 4 страницы</strong>
-                <span class="copy">без хрупкого переключения секций внутри одного документа</span>
+                <strong>Привести себя в&nbsp;форму и&nbsp;поддерживать стабильный результат? С&nbsp;нами легко!</strong>
               </div>
               <div class="hero-note">
-                <h3>Что меняется</h3>
-                <p class="copy">Вместо дублирования блока про бассейн в нескольких местах пользователь сначала видит полную картину центра, а затем уходит в нужное направление через обычные страницы.</p>
+                <p class="copy">Главное — не останавливаться</p>
               </div>
             </div>
           </div>
@@ -79,54 +82,46 @@
         <div class="section-head" data-reveal>
           <div>
             <span class="eyebrow">Четыре направления</span>
-            <h2>Каждое направление теперь раскрывается на собственной странице.</h2>
+            <h2>для движения, восстановления, отдыха и&nbsp;регулярной заботы о себе.</h2>
           </div>
-          <p class="copy">На главной пользователь быстро понимает структуру центра, а дальше уходит в глубину: вода, активные тренировки, восстановительные форматы или спокойный релакс.</p>
+          <p class="copy directions-intro-copy">От активных тренировок до мягкого восстановления и&nbsp;релакса — выберите именно то, что соответствует вашему ритму, самочувствию и&nbsp;цели.</p>
         </div>
 
         <div class="directions-grid">
-          <article class="card direction-card" data-reveal>
+          <article class="card direction-card" data-reveal data-panel-trigger data-direction="water" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="directionPanel">
             <div>
               <span class="card-kicker">Направление 01</span>
               <h3>Водная зона</h3>
-              <p class="copy">Бассейн со свободным плаванием, тренировками и акваформатами для тех, кому важны мягкая нагрузка и ровный ритм.</p>
+              <p class="copy">Свободное плаванье, индивидуальные и групповые тренировки, аквааэробика, аквапрактики для беременных, программы для детей.</p>
             </div>
-            <div class="direction-actions">
-              <a class="btn btn-secondary" href="pages/water.html">Открыть страницу</a>
-            </div>
+            <span class="direction-link">Подробнее о направлении</span>
           </article>
 
-          <article class="card direction-card" data-reveal>
+          <article class="card direction-card" data-reveal data-panel-trigger data-direction="training" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="directionPanel">
             <div>
               <span class="card-kicker">Направление 02</span>
               <h3>Тренировки</h3>
-              <p class="copy">От групповых и персональных форматов до йоги, силовой работы, функциональных классов и подростковых маршрутов.</p>
+              <p class="copy">Силовые и функциональные тренировки, фитнесс-программы и игровые виды спорта: групповые, индивидуальные, с наставником и самостоятельно.</p>
             </div>
-            <div class="direction-actions">
-              <a class="btn btn-secondary" href="pages/training.html">Открыть страницу</a>
-            </div>
+            <span class="direction-link">Подробнее о направлении</span>
           </article>
 
-          <article class="card direction-card" data-reveal>
+          <article class="card direction-card" data-reveal data-panel-trigger data-direction="recovery" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="directionPanel">
             <div>
               <span class="card-kicker">Направление 03</span>
               <h3>Восстановление</h3>
-              <p class="copy">ЛФК, мягкие практики, программы для беременных и деликатные сценарии возвращения к движению.</p>
+              <p class="copy">ЛФК, мягкие практики (йога, цигун), программы для беременных и деликатные сценарии возвращения к активному движению.</p>
             </div>
-            <div class="direction-actions">
-              <a class="btn btn-secondary" href="pages/recovery.html">Открыть страницу</a>
-            </div>
+            <span class="direction-link">Подробнее о направлении</span>
           </article>
 
-          <article class="card direction-card" data-reveal>
+          <article class="card direction-card" data-reveal data-panel-trigger data-direction="relax" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="directionPanel">
             <div>
               <span class="card-kicker">Направление 04</span>
               <h3>Релакс</h3>
-              <p class="copy">Малый бассейн, сауна и зона отдыха как самостоятельный сценарий восстановления или мягкое завершение визита.</p>
+              <p class="copy">Сауна с малым бассейном и лаунж-зоной как самостоятельный сценарий отдыха, восстановления эмоционального балланса или мягкое завершение активной программы.</p>
             </div>
-            <div class="direction-actions">
-              <a class="btn btn-secondary" href="pages/relax.html">Открыть страницу</a>
-            </div>
+            <span class="direction-link">Подробнее о направлении</span>
           </article>
         </div>
       </div>
@@ -137,13 +132,13 @@
         <div class="section-head" data-reveal>
           <div>
             <span class="eyebrow">Инфраструктура</span>
-            <h2>Локации центра вместо общего блока без структуры.</h2>
+            <h2>для каждого направления своя локация</h2>
           </div>
-          <p class="copy">Здесь собраны все реальные пространства центра: от бассейна и релакс-зоны до спортивных залов. Пользователь видит не абстрактные услуги, а конкретные места и сценарии.</p>
+          <p class="copy">Каждая локация тщательно продумана и оснащена под свой формат занятий — от активной нагрузки до восстановления</p>
         </div>
 
         <div class="infra-feature-grid">
-          <article class="infra-feature-card" data-reveal>
+          <article class="infra-feature-card" data-reveal data-panel-trigger data-panel-type="location" data-location="pool" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="directionPanel">
             <div class="infra-feature-head">
               <div class="infra-feature-photo bg-pool-main"></div>
               <div class="infra-feature-body">
@@ -156,30 +151,32 @@
               </div>
             </div>
             <div class="infra-feature-copy">
-              <p class="copy">Основная водная локация для спокойного плавания, акваформатов и мягкого возвращения к движению. Это пространство работает и как отдельная точка притяжения, и как часть общего оздоровительного маршрута внутри центра.</p>
+              <p class="copy">Основная водная локация как для регулярных интенсивных тренировок, так и для спокойного плавания, поддержания формы и просто удовольствия от движения в воде. Это пространство работает и как отдельная точка притяжения, и как часть вашего оздоровительного маршрута внутри центра.</p>
+              <span class="direction-link">Показать локацию</span>
             </div>
           </article>
 
-          <article class="infra-feature-card" data-reveal>
+          <article class="infra-feature-card" data-reveal data-panel-trigger data-panel-type="location" data-location="sauna_pool" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="directionPanel">
             <div class="infra-feature-head">
               <div class="infra-feature-photo bg-spa-main"></div>
               <div class="infra-feature-body">
                 <h3>Сауна и спа</h3>
                 <div class="mini-list">
-                  <div>сауна для расслабления и снятия напряжения</div>
-                  <div>спокойный ритм без спешки и визуального шума</div>
-                  <div>подходит для одиночного отдыха и камерного визита</div>
+                  <div>сауна, купель и зона отдыха</div>
+                  <div>тишина и спокойный ритм</div>
+                  <div>можно побыть одному, а может отдохнуть с семьёй или друзьями, небольшой компанией</div>
                 </div>
               </div>
             </div>
             <div class="infra-feature-copy">
-              <p class="copy">Тихая зона для завершения визита: тепло, восстановление и мягкое переключение после воды или тренировок. Пространство работает и как самостоятельный сценарий отдыха, и как продолжение основной активности.</p>
+              <p class="copy">Для расслабления, восстановления и спокойного отдыха.</p>
+              <span class="direction-link">Показать локацию</span>
             </div>
           </article>
         </div>
 
         <div class="infra-grid">
-          <article class="infra-card" data-reveal>
+          <article class="infra-card" data-reveal data-panel-trigger data-panel-type="location" data-location="sports_hall" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="directionPanel">
             <div class="infra-photo bg-sport-hall"></div>
             <div class="infra-body">
               <h3>Спортивный зал</h3>
@@ -189,10 +186,11 @@
                 <div>форматы для групп и авторских программ</div>
               </div>
               <p class="copy">Просторная универсальная площадка для активных форматов, детских секций и больших групповых занятий.</p>
+              <span class="direction-link">Показать локацию</span>
             </div>
           </article>
 
-          <article class="infra-card" data-reveal>
+          <article class="infra-card" data-reveal data-panel-trigger data-panel-type="location" data-location="step_hall" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="directionPanel">
             <div class="infra-photo bg-step-hall"></div>
             <div class="infra-body">
               <h3>Стэп-зал</h3>
@@ -202,10 +200,11 @@
                 <div>аренда под авторские занятия</div>
               </div>
               <p class="copy">Камерное пространство, где важны ритм, темп и ощущение собранной энергии без перегруженности.</p>
+              <span class="direction-link">Показать локацию</span>
             </div>
           </article>
 
-          <article class="infra-card" data-reveal>
+          <article class="infra-card" data-reveal data-panel-trigger data-panel-type="location" data-location="yoga_hall" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="directionPanel">
             <div class="infra-photo bg-yoga-hall"></div>
             <div class="infra-body">
               <h3>Йога-зал</h3>
@@ -215,10 +214,11 @@
                 <div>небольшие группы и тишина</div>
               </div>
               <p class="copy">Светлое пространство для практик, в которых важны внимание к телу, мягкость и внутренний фокус.</p>
+              <span class="direction-link">Показать локацию</span>
             </div>
           </article>
 
-          <article class="infra-card" data-reveal>
+          <article class="infra-card" data-reveal data-panel-trigger data-panel-type="location" data-location="shape_hall" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="directionPanel">
             <div class="infra-photo bg-shape-hall"></div>
             <div class="infra-body">
               <h3>Шэйп-зал</h3>
@@ -228,10 +228,11 @@
                 <div>форматы с точечной нагрузкой</div>
               </div>
               <p class="copy">Подходит для тех, кто предпочитает более камерные занятия и аккуратную работу с телом.</p>
+              <span class="direction-link">Показать локацию</span>
             </div>
           </article>
 
-          <article class="infra-card" data-reveal>
+          <article class="infra-card" data-reveal data-panel-trigger data-panel-type="location" data-location="gym_hall" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="directionPanel">
             <div class="infra-photo bg-gym-hall"></div>
             <div class="infra-body">
               <h3>Тренажёрный зал</h3>
@@ -241,6 +242,7 @@
                 <div>индивидуальный маршрут по задаче</div>
               </div>
               <p class="copy">Зона для тех, кому важны системность, понятная прогрессия и работа по собственному темпу.</p>
+              <span class="direction-link">Показать локацию</span>
             </div>
           </article>
         </div>
@@ -299,6 +301,14 @@
           <p class="copy">Расписание больше не рассыпано по карточкам услуг: пользователь может быстро посмотреть ближайшие окна и сразу перейти к заявке.</p>
         </div>
 
+        <div class="schedule-filter-bar" id="scheduleFilterBar" hidden>
+          <div>
+            <span class="card-kicker">Активный фильтр</span>
+            <strong id="scheduleFilterTitle">Свободное плавание</strong>
+          </div>
+          <button class="btn btn-secondary" id="scheduleFilterClear" type="button">Показать всё расписание</button>
+        </div>
+
         <div class="weekly-grid">
           <div class="schedule-card" data-reveal>
             <h3>Сегодня в центре</h3>
@@ -309,7 +319,7 @@
             </div>
 
             <div class="day-panel active" id="today-morning">
-              <div class="schedule-item">
+              <div class="schedule-item" data-schedule-item data-schedule-format="free-swimming">
                 <div class="schedule-time">07:30 — 09:00</div>
                 <div>
                   <div class="schedule-title">Свободное плавание</div>
@@ -317,7 +327,7 @@
                 </div>
                 <span class="schedule-type">водная зона</span>
               </div>
-              <div class="schedule-item">
+              <div class="schedule-item" data-schedule-item data-schedule-format="qigong">
                 <div class="schedule-time">10:00 — 11:00</div>
                 <div>
                   <div class="schedule-title">Цигун</div>
@@ -325,10 +335,11 @@
                 </div>
                 <span class="schedule-type">восстановление</span>
               </div>
+              <div class="schedule-empty-state" data-schedule-empty hidden>На это время нет занятий по выбранному фильтру.</div>
             </div>
 
             <div class="day-panel" id="today-day">
-              <div class="schedule-item">
+              <div class="schedule-item" data-schedule-item data-schedule-format="swim-training">
                 <div class="schedule-time">13:00 — 14:00</div>
                 <div>
                   <div class="schedule-title">Тренировка по плаванию</div>
@@ -336,7 +347,7 @@
                 </div>
                 <span class="schedule-type">тренировки</span>
               </div>
-              <div class="schedule-item">
+              <div class="schedule-item" data-schedule-item data-schedule-format="badminton-kids">
                 <div class="schedule-time">15:30 — 16:30</div>
                 <div>
                   <div class="schedule-title">Детский бадминтон</div>
@@ -344,10 +355,11 @@
                 </div>
                 <span class="schedule-type">детские секции</span>
               </div>
+              <div class="schedule-empty-state" data-schedule-empty hidden>На это время нет занятий по выбранному фильтру.</div>
             </div>
 
             <div class="day-panel" id="today-evening">
-              <div class="schedule-item">
+              <div class="schedule-item" data-schedule-item data-schedule-format="yoga-stretch">
                 <div class="schedule-time">18:00 — 19:00</div>
                 <div>
                   <div class="schedule-title">Йога и мягкое вытяжение</div>
@@ -355,7 +367,7 @@
                 </div>
                 <span class="schedule-type">восстановление</span>
               </div>
-              <div class="schedule-item">
+              <div class="schedule-item" data-schedule-item data-schedule-format="strength-class">
                 <div class="schedule-time">20:00 — 21:00</div>
                 <div>
                   <div class="schedule-title">Силовой класс</div>
@@ -363,36 +375,42 @@
                 </div>
                 <span class="schedule-type">тренировки</span>
               </div>
+              <div class="schedule-empty-state" data-schedule-empty hidden>На это время нет занятий по выбранному фильтру.</div>
             </div>
           </div>
 
-          <div class="schedule-card" data-reveal>
+          <div class="schedule-card" data-reveal id="weeklyOverviewCard">
             <h3>Недельный обзор</h3>
             <div class="weekly-list">
-              <div class="week-row">
-                <div class="week-day">Пн</div>
-                <div class="copy">Плавание утром, функциональный класс днём, йога вечером.</div>
+              <div class="week-row" data-week-row data-schedule-format="free-swimming">
+                <div class="week-day">Пн, утро</div>
+                <div class="copy">Свободное плавание, 07:30-09:00. Спокойный вход в день в большом бассейне.</div>
               </div>
-              <div class="week-row">
+              <div class="week-row" data-week-row data-schedule-format="aqua">
                 <div class="week-day">Вт</div>
-                <div class="copy">Акваформаты, подростковый фитнес и консультационные окна.</div>
+                <div class="copy">Аквааэробика, 11:00-12:00. Ритмичная водная нагрузка в комфортном темпе.</div>
               </div>
-              <div class="week-row">
+              <div class="week-row" data-week-row data-schedule-format="free-swimming">
+                <div class="week-day">Пн, день</div>
+                <div class="copy">Свободное плавание, 12:30-14:00. Дневное окно для спокойного самостоятельного посещения.</div>
+              </div>
+              <div class="week-row" data-week-row data-schedule-format="free-swimming">
                 <div class="week-day">Ср</div>
-                <div class="copy">Свободная вода, цигун, персональные тренировки и релакс-сценарии.</div>
+                <div class="copy">Свободное плавание, 08:00-09:30. Утренний свободный слот в бассейне.</div>
               </div>
-              <div class="week-row">
+              <div class="week-row" data-week-row data-schedule-format="group-training">
                 <div class="week-day">Чт</div>
-                <div class="copy">Стретчинг, бадминтон и вечерние групповые занятия.</div>
+                <div class="copy">Групповая тренировка по плаванию, 18:30-19:30. Формат с тренером и собранным ритмом.</div>
               </div>
-              <div class="week-row">
+              <div class="week-row" data-week-row data-schedule-format="free-swimming">
                 <div class="week-day">Пт</div>
-                <div class="copy">Утреннее восстановление, ЛФК и мягкие вечерние форматы.</div>
+                <div class="copy">Свободное плавание, 20:00-21:00. Вечернее посещение для разгрузки после дня.</div>
               </div>
-              <div class="week-row">
+              <div class="week-row" data-week-row data-schedule-format="free-swimming">
                 <div class="week-day">Сб–Вс</div>
-                <div class="copy">Семейные визиты, вода, спокойные тренировки и релакс по записи.</div>
+                <div class="copy">Свободное плавание, 10:00-12:00. Семейный и спокойный водный сценарий выходного дня.</div>
               </div>
+              <div class="schedule-empty-state" data-week-empty hidden>На неделю пока нет занятий по выбранному фильтру.</div>
             </div>
             <div class="detail-actions">
               <a class="btn btn-primary" href="#contacts">Оставить заявку</a>
@@ -570,10 +588,134 @@
     </section>
   </main>
 
+  <div class="panel-backdrop" id="panelBackdrop" hidden></div>
+  <aside class="slide-panel" id="directionPanel" aria-hidden="true" aria-labelledby="panelTitle">
+    <div class="slide-panel-shell">
+      <div class="slide-panel-head">
+        <div>
+          <span class="card-kicker" id="panelKicker">Направление</span>
+          <h2 id="panelTitle">Выберите сценарий</h2>
+        </div>
+        <button class="panel-close" id="panelClose" type="button" aria-label="Закрыть панель">Закрыть</button>
+      </div>
+
+      <div class="slide-panel-body">
+        <div class="panel-view panel-view-scenario" id="panelScenarioView" hidden>
+          <section class="scenario-section">
+            <div class="scenario-section-head">
+              <h3>Форматы</h3>
+              <span class="copy" id="scenarioFormatHint">Выберите формат, чтобы уточнить содержание</span>
+            </div>
+            <div class="scenario-chip-row" id="scenarioChipRow" role="tablist" aria-label="Форматы направления"></div>
+          </section>
+
+          <section class="scenario-hero">
+            <div class="scenario-hero-copy">
+              <p class="copy" id="panelLead">Здесь появится пошаговая логика направления: переход к локациям, расписанию, форматам занятий и записи.</p>
+            </div>
+            <div class="scenario-hero-media" id="scenarioHeroMedia" aria-hidden="true"></div>
+          </section>
+
+          <section class="scenario-section">
+            <div class="scenario-section-head">
+              <h3>Где проходит</h3>
+            </div>
+            <article class="scenario-location-card">
+              <div class="scenario-location-media" id="scenarioLocationMedia" aria-hidden="true"></div>
+              <div class="scenario-location-copy">
+                <h3 id="scenarioLocationTitle">Бассейн</h3>
+                <p class="copy" id="scenarioLocationDescription">Просторная водная локация для самостоятельных тренировок, восстановления и комфортного плавания в спокойном темпе.</p>
+                <button class="panel-inline-link" id="scenarioLocationLink" type="button">Открыть локацию</button>
+              </div>
+            </article>
+          </section>
+
+          <section class="scenario-section">
+            <div class="scenario-section-head">
+              <h3>Ближайшие занятия</h3>
+              <span class="copy" id="scenarioScheduleMeta">Формат: Свободное плавание</span>
+            </div>
+            <div class="scenario-schedule-list" id="scenarioScheduleList"></div>
+          </section>
+
+          <section class="scenario-section" id="scenarioTrainersSection" hidden>
+            <div class="scenario-section-head">
+              <h3>Наши тренеры</h3>
+            </div>
+            <div class="scenario-trainers-grid" id="scenarioTrainersGrid"></div>
+          </section>
+        </div>
+
+        <div class="panel-view panel-view-location" id="panelLocationView" hidden>
+          <section class="location-hero">
+            <div class="location-hero-copy">
+              <p class="copy" id="locationLead">Ключевая локация центра для спокойного ритма, понятного маршрута и комфортного входа в активность.</p>
+            </div>
+            <div class="location-hero-media" id="locationHeroMedia" aria-hidden="true"></div>
+          </section>
+
+          <section class="location-section">
+            <div class="location-section-head">
+              <h3>Что доступно в локации</h3>
+              <span class="copy" id="locationHighlightsHint">Ключевые сценарии использования пространства</span>
+            </div>
+            <div class="location-highlight-list" id="locationHighlights"></div>
+          </section>
+
+          <section class="location-section">
+            <div class="location-section-head">
+              <h3>Связанные направления</h3>
+              <span class="copy">Чтобы выбрать направлениеи формат занятий, перейдите в соответсвующий раздел:</span>
+            </div>
+            <div class="location-related-row" id="locationRelatedDirections"></div>
+          </section>
+
+          <section class="location-section">
+            <div class="location-section-head">
+              <h3>Ближайшая активность в локации</h3>
+              <span class="copy" id="locationActivitiesMeta">По этой локации</span>
+            </div>
+            <div class="scenario-schedule-list" id="locationActivitiesList"></div>
+          </section>
+        </div>
+
+      </div>
+
+      <div class="slide-panel-footer">
+        <button class="btn btn-secondary panel-footer-btn" id="panelScheduleAction" type="button">Смотреть полное расписание</button>
+        <button class="btn btn-primary panel-footer-btn" id="panelBookingAction" type="button">Записаться / Получить консультацию</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="panel-mini-backdrop" id="panelMiniBackdrop" hidden></div>
+  <div class="panel-mini-modal" id="panelMiniModal" aria-hidden="true" aria-labelledby="miniModalTitle">
+    <div class="panel-mini-shell">
+      <div class="panel-mini-head">
+        <div>
+          <span class="card-kicker">Занятие</span>
+          <h3 id="miniModalTitle">Ближайшее занятие</h3>
+        </div>
+        <button class="panel-close panel-mini-close" id="panelMiniClose" type="button" aria-label="Закрыть карточку занятия">Закрыть</button>
+      </div>
+      <div class="panel-mini-body">
+        <div class="panel-mini-time" id="miniModalTime">08:00</div>
+        <h3 id="miniModalName">Свободное плавание</h3>
+        <div class="panel-mini-meta" id="miniModalDay">Ежедневно</div>
+        <p class="copy" id="miniModalLocation">Бассейн</p>
+        <p class="copy" id="miniModalDescription">Спокойное окно для тех, кто хочет прийти в бассейн без привязки к группе и выбрать собственный ритм плавания.</p>
+        <div class="panel-mini-actions">
+          <button class="btn btn-secondary" type="button">Смотреть полное расписание</button>
+          <button class="btn btn-primary" type="button">Записаться</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer>
     <div class="container footer-row">
       <div>© 2026 ФОК «Сосновый»</div>
-      <div>Главная страница и отдельные страницы направлений</div>
+      <div>Главная страница и slide-panel логика направлений</div>
     </div>
   </footer>
 

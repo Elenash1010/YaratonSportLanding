@@ -1009,6 +1009,18 @@ let activeScenarioFormat = null;
 let activeLocationKey = null;
 let activeScheduleFilter = null;
 
+function resolveAssetUrl(url) {
+  if (!url || !url.includes("images.unsplash.com/")) return url;
+
+  const [baseUrl, queryString = ""] = url.split("?");
+  const fileName = baseUrl.split("/").pop();
+  const params = new URLSearchParams(queryString);
+  const width = params.get("w");
+
+  if (!fileName || !width) return url;
+  return `assets/images/remote/${fileName}-w${width}.jpg`;
+}
+
 function syncPanelVariant() {
   if (!directionPanel) return;
   const hideWaterLocationTail = activeScenarioKey === "water"
@@ -1162,8 +1174,8 @@ function renderScenarioPanel() {
 
   panelLead.textContent = format.atmosphere;
   scenarioFormatHint.textContent = scenario.formatHint || "Выберите формат, чтобы уточнить содержание";
-  scenarioHeroMedia.style.backgroundImage = `linear-gradient(180deg, rgba(15, 23, 32, .1), rgba(15, 23, 32, .22)), url("${format.heroImage}")`;
-  scenarioLocationMedia.style.backgroundImage = `linear-gradient(180deg, rgba(15, 23, 32, .06), rgba(15, 23, 32, .12)), url("${format.location.image}")`;
+  scenarioHeroMedia.style.backgroundImage = `linear-gradient(180deg, rgba(15, 23, 32, .1), rgba(15, 23, 32, .22)), url("${resolveAssetUrl(format.heroImage)}")`;
+  scenarioLocationMedia.style.backgroundImage = `linear-gradient(180deg, rgba(15, 23, 32, .06), rgba(15, 23, 32, .12)), url("${resolveAssetUrl(format.location.image)}")`;
   scenarioLocationTitle.textContent = format.location.title;
   scenarioLocationDescription.textContent = format.location.description;
   if (activeScenarioKey === "water") {
@@ -1207,7 +1219,7 @@ function renderLocationPanel() {
 
   locationHighlightsHint.textContent = location.highlightsHint || "Ключевые сценарии использования пространства";
   locationLead.textContent = location.lead;
-  locationHeroMedia.style.backgroundImage = `linear-gradient(180deg, rgba(15, 23, 32, .08), rgba(15, 23, 32, .18)), url("${location.heroImage}")`;
+  locationHeroMedia.style.backgroundImage = `linear-gradient(180deg, rgba(15, 23, 32, .08), rgba(15, 23, 32, .18)), url("${resolveAssetUrl(location.heroImage)}")`;
   locationHighlights.innerHTML = location.highlights.map((item) => `<div class="location-highlight-item">${item}</div>`).join("");
   locationActivitiesMeta.textContent = "По этой локации";
   panelScheduleAction.textContent = location.scheduleCta || "Расписание по локации";
